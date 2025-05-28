@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Lobster', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+/* h1{
+    color: gray;
+    font-size: 200px;
+    cursor: pointer;
+    transition: 0.5s;
+    user-select: none;
+} */
+
+/* h1:hover{
+    color: white; */
+    /* text-shadow: h-shadow v-shadow blur-radius color; */
+    /* text-shadow: 
+    0 0 5px #12CBC4,
+    0 0 25px #12CBC4,
+    0 0 50px #12CBC4,
+    0 0 100px #12CBC4
+    ; */
+    /* In this method increase blur and spread, therfore show bulb glow */
+/* } */
+
+h1{
+    color: gray;
+    font-size: 200px;
+    cursor: pointer;
+    transition: 0.5s;
+    user-select: none;
+    animation: glow 0.5s ease infinite;
+
+}
+
+@keyframes glow {
+    from{
+        color: gray;
+    }
+    to{
+        color: white;
+        text-shadow: 
+    0 0 5px #12CBC4,
+    0 0 25px #12CBC4,
+    0 0 50px #12CBC4,
+    0 0 100px #12CBC4
+    ;
+    }
+}

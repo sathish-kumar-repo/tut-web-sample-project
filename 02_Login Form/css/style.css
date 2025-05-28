@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,300;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+h1{
+    position: fixed;
+    bottom: 10px;
+    right: 150px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.655);
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+h1 b{
+    font-family: cursive;
+    font-size: 15px;
+}
+.login-form{
+    width: 250px;
+    height: 260px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0,0.3);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.login-form h5{
+    text-align: center;
+    text-transform: uppercase;
+    background-color: rgba(5, 209, 250, 0.597);
+    width: 100%;
+    height: 50px;
+    border-radius: 20px 20px 0 0;
+    color: white;
+    line-height: 50px;
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 300;
+    user-select: none;
+}
+
+input[type="email"],
+input[type="password"]{
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder{
+    color: white;
+    letter-spacing: 1px;
+}
+i{
+    display: block;
+    color: white;
+    margin-top: 28px;
+
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid white;
+    margin: 0 15px;
+    padding: 0 10px;
+}
+.form-button{
+    display: flex;
+    margin: 20px 0;
+    font-size: 10px;
+    justify-content: space-around;
+    user-select: none;
+}
+input[type="checkbox"]{
+   appearance: none;
+   height: 12px;
+   width: 12px;
+   border: 2px solid black;
+   margin-right: 8px;
+   margin-top: 1px;
+   border-radius: 3px;
+}
+input[type="checkbox"]:checked::before{
+    content: '\2713';
+    font-size: 7px !important;
+    font-weight: 700;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input[type="checkbox"]:checked{
+    color: white;
+    background-color: black;
+}
+.form-checkbox{
+    display: flex;
+    justify-content: space-between;
+}
+.form-checkbox label,.form-checkbox + a{
+    color: rgba(255, 255, 255,0.3);
+}
+a{
+    text-decoration: none;
+}
+button{
+    width: 50%;
+    font-size: 12px;
+    border: none;
+    margin-left: 60px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 7px 0;
+    letter-spacing: 1px;
+    background-color: rgba(2, 152, 182, 0.625);;
+    color: white;
+}

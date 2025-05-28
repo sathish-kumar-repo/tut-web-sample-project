@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;600&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.box{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('../images/banner.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:5% ;
+    padding-right:5% ;
+    height: 70px;
+    ul li{
+        list-style: none;
+        display: inline-block;
+        padding: 10px 20px;
+        a{
+            text-decoration: none;
+            color:white;
+            font-size: 18px;
+            &:hover{
+                color:orangered;
+                transition: 0.5s;
+            }
+        }
+    }
+    button{
+        padding: 12px 30px;
+        border-radius: 30px;
+        background:orangered;
+        border:none;
+        color:white;
+        font-size: 15px;
+        &:hover{
+            transform: scale(1.1);
+            transition: 0.5s;
+            cursor: pointer;
+        }
+    }
+}
+
+.logo{
+    font-size: 30px;
+    color:white;
+    span{
+        color:orangered;
+        font-family: 'Lobster', cursive;
+    }
+}
+
+.banner-text{
+    color:white;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    transition: 0.5s;
+    h1{
+        font-size: 50px;
+        text-transform: uppercase;
+    }
+    span{
+        color:orangered;
+        font-family: 'Lobster', cursive;
+    }
+    p{
+        font-size: 25px;
+    }
+}

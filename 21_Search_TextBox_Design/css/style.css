@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fca889;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.form-group{
+    width: 500px;
+    height: 60px;
+    position: relative;
+}
+
+.form-group input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+
+.form-group input:focus{
+    border:2px solid orangered
+}
+
+.form-group .btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+    border: none;
+    background-color: orangered;
+    color: white;
+    font-size: 20px;
+}
+
+.form-group .btn:hover{
+    background-color: rgb(248, 82, 21);
+}
+
+/* Btn1 */
+
+.btn1 .input{
+    padding-right: 80px;
+}
+.btn1 .btn{
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+/* Btn2 */
+.btn2 .input{
+    padding-left: 80px;
+}
+.btn2 .btn{
+    left: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    
+}
+/* Btn3 */
+.btn3 .input{
+    border-radius: 50px;
+    padding-right: 65px;
+}
+.btn3 .btn{
+    border-radius: 50px;
+}
+
+/* Btn4 */
+.btn4 .input{
+    border-radius: 50px;
+    padding-left: 65px;
+}
+.btn4 .btn{
+    left: 0;
+    border-radius: 50px;
+}
+
+/* Btn5 */
+.btn5 .input{
+    padding-right: 140px;
+  
+}
+.btn5 .btn{
+    width: 125px;
+    height: 45px;
+    top: 8px;
+    right: 6px;
+}
+
+/* Btn6 */
+.btn6 .input{
+    padding-right: 140px;
+  
+}
+.btn6 .btn{
+    width: 125px;
+    height: 45px;
+    top: 8px;
+    right: 6px;
+    border-radius: 50px;
+}

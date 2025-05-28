@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --bgcolor:#ff9998;
+    --clock-frame: #545271;
+    --clock-bg: #fefefc;
+    --shadow: #181818;
+    --text-color:#4d4b63;
+    --sec:#ff5e5e;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: var(--bgcolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+  
+.clock{
+    width: 60vh;
+    height: 60vh;
+    background-color:var(--clock-frame);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--shadow);
+    position: relative;
+}
+
+.clock-inner-bg{
+    width: 92%;
+    height: 92%; 
+    box-shadow: 0 0 3px var(--shadow);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &:nth-of-type(2){
+        width: 85%;
+        height: 85%;
+        box-shadow: none;
+        background-color: var(--clock-bg);
+        &::before{
+            content:'Ajanta';
+            color:var(--text-color);
+            position: absolute;
+            top:20%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 30px;
+        }
+        &::after{
+            content:'Sathish Kumar';
+            color:var(--text-color);
+            position: absolute;  
+            bottom:20%;
+            left: 50%;
+            transform: translate(-50%,-50%); 
+            // font-size: 15px;         
+        }
+    }
+}
+
+.clock-center{
+    width: 20px;
+    height: 20px;
+    background-color:var(--text-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.needle{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+
+.hrs{
+    background:var(--text-color);
+    width: 8px;
+    height: 25%;
+}
+
+.min{
+    background:var(--text-color);
+    width: 6px;
+    height: 40%;
+}
+
+.sec{
+    background-color: var(--sec);
+    width: 3px;
+    height: 40%;
+}
+
+.sec::after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 50px;
+    background-color: var(--sec);
+    bottom: -30px;
+}
+
+.clock-mark{
+    width: 5px;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin:bottom;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 25px;
+        transform: translateX(-50%);
+        font-size: 35px;
+        font-weight: 500;
+        color:var(--text-color);
+    }
+    &::after{
+        content: "";
+        width: 2.5px;
+        height: 2.5px;
+        border-radius: 50%;
+        background-color:var(--text-color);
+        position: absolute;
+        top: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+    } 
+}
+
+@for $i from 0 to 60{
+    .clock-mark:nth-child(#{$i+1}){
+        transform:rotate(#{$i*6}deg);
+    }
+}
+
+.clock-mark:nth-child(1)::before {
+    content: "12";
+    transform: translate(-50%, -50%) rotate(-0deg);
+}
+@for $j from 1 to 12{
+    .clock-mark:nth-child(#{(5*$j)+1})::before {
+        content: "#{$j}";
+        transform: translate(-50%, -50%) rotate(-#{($j)*30}deg);
+    }
+}
+.clock-mark:nth-child(5n+1)::after{
+    width: 5px;
+    height: 5px;
+    background-color: var(--sec);
+}
+
+// ***********************
+
+// @for $j from 1 to 12{
+//     .clock-mark:nth-child(#{(5*$j)+1})::before {
+//         content: "#{$j}";
+//         transform: translate(-50%, -50%) rotate(-#{(($j)-1)*30}deg);
+//     }
+// }

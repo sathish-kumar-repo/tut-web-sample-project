@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="../../../assets/css/CourseStyle.css"> 
+</head>
+<body>
+  <section>
+  <h1 class="project">Responsive Navbar Designs</h1> 
+<div class="hold">
+
+<h3 id="h3">Design-1</h3>
+
+<h2 id="h2">Source Code</h2>
+<div class="html">
+<pre>
+<code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        &lt;title&gt;Animated Navbar Design-1&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;nav&gt;
+            &lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;Product&lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;Download&lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;
+            &lt;div class=&quot;animate&quot;&gt;&lt;/div&gt;
+        &lt;/nav&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code>
+</pre>
+</div>
+
+<h2 id="h2">CSS</h2>
+<div class="css">
+<pre>
+<code>
+    @import url(&quot;https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap&quot;);
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: &quot;Poppins&quot;, sans-serif;
+    }
+    
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ecf0f1;
+    }
+    
+    nav {
+      width: 800px;
+      height: 50px;
+      background: #b71540;
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+      display: flex;
+      position: relative;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      line-height: 50px;
+      width: 100px;
+      text-align: center;
+      z-index: 1;
+    }
+    nav .animate {
+      background-color: #16a085;
+      position: absolute;
+      height: 100%;
+      width: 100px;
+      top: 0;
+      left: 0;
+      border-radius: 5px;
+      opacity: 0;
+      transition: 0.2s;
+    }
+    nav:hover .animate {
+      opacity: 1;
+    }
+    
+    nav a:nth-child(1):hover ~ .animate {
+      left: 0px;
+    }
+    
+    nav a:nth-child(2):hover ~ .animate {
+      left: 100px;
+    }
+    
+    nav a:nth-child(3):hover ~ .animate {
+      left: 200px;
+    }
+    
+    nav a:nth-child(4):hover ~ .animate {
+      left: 300px;
+    }
+    
+    nav a:nth-child(5):hover ~ .animate {
+      left: 400px;
+    }    
+</code>
+</pre>
+</div>
+
+<h2 id="h2">SASS</h2>
+<div class="sass">
+<pre>
+<code>
+    @import url(&#39;https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap&#39;);
+
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: &#39;Poppins&#39;, sans-serif;
+    }
+    
+    body{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ecf0f1;
+    }
+    
+    nav{
+        width: 800px;
+        height: 50px;
+        background: #b71540;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+        display: flex;
+        position: relative;
+        a{
+            text-decoration: none;
+            color:white;
+            text-transform: uppercase;
+            line-height: 50px;
+            width: 100px;
+            text-align: center;
+            z-index: 1;
+        }
+        .animate{
+            background-color: #16a085;
+            position: absolute;
+            height: 100%;
+            width: 100px;
+            top:0;
+            left: 0;
+            border-radius: 5px;
+            opacity: 0;
+            transition: 0.2s;
+        }
+        &amp;:hover .animate{
+            opacity: 1;
+        }
+      
+    }
+    @for $i from 0  to 5{
+     nav a:nth-child(#{$i+1}):hover~.animate{
+        left: 100px * $i;
+     }       
+    }   
+</code>
+</pre>
+</div>
+<a class="a" href="Design_1/index.html" target="_blank">Live Preview</a>	
+<hr>
+
+<h3 id="h3">Design-2</h3>
+
+<h2 id="h2">Source Code</h2>
+<div class="html">
+<pre>
+<code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Product&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Service&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Download&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code>
+</pre>
+</div>
+
+<h2 id="h2">CSS</h2>
+<div class="css">
+<pre>
+<code>
+    @import url(&quot;https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap&quot;);
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: &quot;Poppins&quot;, sans-serif;
+    }
+    
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ecf0f1;
+    }
+    
+    nav {
+      background-color: white;
+      border-radius: 3px;
+      padding: 10px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    }
+    nav ul li {
+      list-style: none;
+      display: inline-block;
+      padding: 15px 35px;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      transition: 0.1s;
+      /***************/
+    }
+    nav ul li::after {
+      position: absolute;
+      content: &quot;&quot;;
+      height: 100%;
+      width: 100%;
+      background-color: #e74c3c;
+      border-radius: 3px;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      opacity: 0;
+      transition: 0.5s;
+    }
+    nav ul li:hover::after {
+      opacity: 1;
+      top: 50%;
+    }
+    nav ul li:hover a {
+      color: white;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #777;
+      font-weight: 500;
+    }
+    
+</code>
+</pre>
+</div>
+
+<h2 id="h2">SASS</h2>
+<div class="sass">
+<pre>
+<code>
+    @import url(&#39;https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap&#39;);
+
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: &#39;Poppins&#39;, sans-serif;
+    }
+    
+    body{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ecf0f1;
+    }
+    
+    nav{
+        background-color: white;
+        border-radius: 3px;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+        ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            transition: .1s;
+            &amp;::after{
+                position: absolute;
+                content: &#39;&#39;;
+                height: 100%;
+                width: 100%;
+                background-color: #e74c3c;
+                border-radius: 3px;
+                top: 100%; 
+                left: 50%;
+                transform: translate(-50%,-50%);
+                z-index: -1;
+                opacity: 0;
+                transition:  0.5s;
+            }  
+            &amp;:hover::after{
+                opacity: 1;
+                top:50%;
+            } 
+            &amp;:hover a{
+                color:white;
+            }
+            /***************/
+            a{
+                text-decoration: none;
+                color:#777;
+                font-weight: 500;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+            }
+        }
+    }    
+</code>
+</pre>
+</div>
+</div>
+</div>
+<a class="a" href="Design_2/index.html" target="_blank">Live Preview</a>					
+</section>
+<footer class="footer"></footer>
+<script src="../../../assets/js/script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

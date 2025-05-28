@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --green:#27C8A3;
+  --red:#FC5530;
+  --yellow:#FFB42E;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ced6e0;
+}
+
+.container {
+  margin: 100px auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  width: 1000px;
+}
+
+.card {
+  width: 300px;
+  min-height: 400px;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+}
+
+.card-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  background-color: #fff;
+}
+.card-content:hover {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+.card-content:active {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  /*Should be add this property, so its work in firebox and also safari*/
+  transform: rotateX(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+  padding: 10px;
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.front .img {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+.front .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+.front .img:hover img {
+  transform: scale(1.1);
+}
+.front h3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 10px 0px;
+}
+.front p {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 10px 0px;
+  text-transform: capitalize;
+}
+.front h4 {
+  font-weight: 400;
+  color: var(--green);
+}
+.front h4.red {
+  color: var(--red);
+}
+.front h4.yellow {
+  color: var(--yellow);
+}
+.front button {
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: var(--green);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.front button.red {
+  background-color: var(--red);
+}
+.front button.yellow {
+  background-color: var(--yellow);
+}
+
+.fa-heart {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 20px !important;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  z-index: 99;
+  transition: 0.5s;
+}
+.fa-heart:hover {
+  color: #EA2027;
+}
+
+.star {
+  margin: 10px 0;
+}
+.star .fa {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+}
+.star .active {
+  color: gold;
+}
+.star span:hover {
+  color: gold;
+}
+
+.fa-shopping-cart {
+  font-size: 20px !important;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 20px;
+    width: 80%;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card {
+    width: 100%;
+  }
+  .front p {
+    font-size: 13px;
+  }
+}
+.back table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.back table td, .back table th {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 5px;
+}
+.back table tr:nth-of-type(even) {
+  background-color: rgba(48, 51, 107, 0.2);
+}
+
+/*usual tranform property , its work in 2d
+but in this property work in 3d*/

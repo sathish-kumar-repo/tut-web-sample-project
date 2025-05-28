@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Lobster', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+
+h1{
+    font-size: 200px;
+    background: rgb(9,121,101);
+    background: linear-gradient(140deg, rgba(9,121,101,1) 19%, rgba(75,86,146,1) 57%, rgba(44,162,199,1) 74%, rgba(235,0,255,1) 100%);
+    color: transparent;
+    /* To search can i use  */
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 500% 500%;
+    animation: sathish 2s ease infinite;
+    
+}
+
+@keyframes sathish {
+    0%{
+        background-position: 0%;
+    }
+    50%{
+        background-position: 100%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}

@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap");
+/*  brand-banner */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+/* Food Type*/
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+:root {
+  --color-1:#001542;
+  --color-2:#085454;
+  --color-3:#7A7A7A;
+  --color-4:#FFFFFF;
+  --color-5:#FFB30D;
+  --color-6:#7a7a7a69;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f6fa;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-2);
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.navbar-banner {
+  color: var(--color-4);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.nav-cart {
+  color: var(--color-4);
+  width: 40px;
+  font-size: 25px;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-items {
+  position: absolute;
+  top: -2px;
+  right: 10px;
+  font-size: 15px;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  background-color: var(--color-3);
+  color: var(--color-4);
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.slider {
+  width: 100vw;
+  min-height: calc(50vh - 50px);
+  background: url("../images/food.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-banner {
+  background-color: var(--color-6);
+  width: 100%;
+  padding: 10px;
+}
+.brand-banner h3 {
+  font-size: 70px;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  color: var(--color-5);
+  /* text-shadow: horizontal-offset vertical-offset blur color; */
+  text-shadow: 2px 1px 1px var(--color-2), 5px 1px 2px var(--color-1);
+  transition: transform 0.5s ease-out;
+  /* animation: duration timing-function delay count name*/
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  cursor: pointer;
+}
+.brand-banner h3:hover {
+  transform: scale(1.02);
+}
+.brand-banner p {
+  font-size: 16px;
+  color: var(--color-4);
+  text-shadow: 1px 0px 1px var(--color-5);
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  animation: 2s ease-out 0s 1 fadeIn;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.menu-item {
+  background-color: var(--color-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-item ul {
+  list-style: none;
+}
+.menu-item ul li {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  width: 80px;
+  text-align: center;
+}
+.menu-item ul li a {
+  color: var(--color-4);
+  text-decoration: none;
+  transition: 0.2s;
+}
+.menu-item ul li a:hover {
+  color: var(--color-5);
+}
+
+#txtFoodType {
+  background-color: var(--color-5);
+  color: var(--color-2);
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 50px;
+  font-family: "Great Vibes", cursive;
+  text-shadow: 2px 1px 1px var(--color-4);
+}
+
+.products-container {
+  width: 90vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2rem;
+  margin-top: 20px;
+}
+
+.product {
+  background-color: var(--color-4);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: box-shadow 0.3s ease-in-out;
+  position: relative;
+}
+.product:hover {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.product h3, .product h4 {
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 5px;
+}
+.product h3 {
+  color: var(--color-5);
+}
+.product h4 {
+  color: var(--color-1);
+}
+.product h5 {
+  margin-top: 10px;
+  color: var(--color-5);
+  background-color: var(--color-1);
+  padding: 5px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+.product h5 span {
+  color: var(--color-4);
+  font-weight: normal;
+}
+
+.img-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-img {
+  width: 100%;
+}
+
+.btn-item {
+  border: none;
+  padding: 12px 8px 12px 8px;
+  background-color: var(--color-3);
+  color: var(--color-4);
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: capitalize;
+  position: absolute;
+  top: 0;
+  transition: background-color 0.3s ease-in;
+}
+.btn-item:hover {
+  background-color: var(--color-1);
+}
+
+.btn-fav {
+  border: none;
+  background-color: transparent;
+  color: var(--color-4);
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.btn-fav:hover {
+  color: var(--color-5);
+}
+
+.footer {
+  width: 100%;
+  background-color: var(--color-2);
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+.footer p {
+  color: white;
+}
+.footer a {
+  color: var(--color-5);
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
